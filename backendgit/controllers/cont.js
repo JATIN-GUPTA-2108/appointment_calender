@@ -16,15 +16,22 @@ export const getAppointments = async (req, res) => {
 }
 
 export const createAppointment = async (req, res) => {
-    const { title, message, selectedFile, creator, tags } = req.body;
+    const { p1,p2 ,  p3 ,p4, task} = req.body.data;
+console.log(req.body.data.task);
+console.log(req.body.task);
 
-    const newPostMessage = new appointmentData({ p1,p2,p3,p4, title,date , time})
+const{date , time}=req.body
+console.log(task);
+
+
+    const newPostMessage = new appointmentData({ p1,p2,p3,p4, task,date , time})
 
     try {
         await newPostMessage.save();
-
+            console.log(newPostMessage)
         res.status(201).json(newPostMessage );
     } catch (error) {
+        // console.log(error.message)
         res.status(409).json({ message: error.message });
     }
 }

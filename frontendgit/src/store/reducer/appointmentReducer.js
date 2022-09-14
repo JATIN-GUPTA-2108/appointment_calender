@@ -8,7 +8,7 @@ const getDataFromMongo=()=>{
   try {
     const { data } = api.fetchAppointments();
 
-    return JSON.parse({data});
+    return (data);
   } catch (error) {
     console.log(error.message);
   }

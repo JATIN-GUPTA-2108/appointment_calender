@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json({limit:"30mb", extended:true}));
 app.use(bodyParser.urlencoded({limit:"30mb", extended:true}));
 app.use(cors());
-app.use('/posts' , postRoutes);
+app.use('/appointment' , postRoutes);
 const connection_url="mongodb+srv://JMBDDDIGITAL:JMBDDDIGITAL@cluster0.gremxsu.mongodb.net/?retryWrites=true&w=majority";
 //PASSWORD:JMBDDDIGITAL
 const PORT=process.env.PORT || 5000; 
