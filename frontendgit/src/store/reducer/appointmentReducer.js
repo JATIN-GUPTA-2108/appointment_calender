@@ -7,7 +7,7 @@ const getDataFromLocal = () => {
 const getDataFromMongo=()=>{
   try {
     const { data } = api.fetchAppointments();
-
+console.log(data);
     return (data);
   } catch (error) {
     console.log(error.message);

@@ -16,15 +16,17 @@ export const getAppointments = async (req, res) => {
 }
 
 export const createAppointment = async (req, res) => {
-    const { p1,p2 ,  p3 ,p4, task} = req.body.data;
-console.log(req.body.data.task);
-console.log(req.body.task);
+    const { p1,p2 ,  p3 ,p4, Time} = req.body.data;
+    console.log(req.body);  
+const Task=req.body.data.Task;
+// console.log(req.body.Time);
+// console.log(req.body.data.Time);
 
-const{date , time}=req.body
-console.log(task);
+const{date }=req.body
+console.log(Task);
 
 
-    const newPostMessage = new appointmentData({ p1,p2,p3,p4, task,date , time})
+    const newPostMessage = new appointmentData({ p1,p2,p3,p4, Task,date , Time})
 
     try {
         await newPostMessage.save();
